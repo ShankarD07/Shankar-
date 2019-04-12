@@ -1,0 +1,60 @@
+1
+select p.pname,p.pid,p.tid,max(pd.score)
+from player p,played pd
+where p.pid=pd.pid;
+
+
+
+
+2
+select mid,t1,t2
+from match1
+where date between '15-SEP-2018' and '19-SEP-2018';
+
+
+3
+select p.pname,p.pid,p.tid,pd.score
+from player p,played pd
+where p.pid=pd.pid
+and pd.score='0';
+
+
+4
+delete from stadium
+where sid='402';
+
+
+
+5
+select p.pname,p.pid,p.tid,pd.score
+from player p,played pd
+where p.pid=pd.pid
+having pd.score>50
+order by pid;
+
+
+
+6
+select pname,pid
+from player
+where birthplace='MAHARASTRA';
+
+
+
+7
+select pname,pid
+from player
+(select age
+having age<25
+order by age);
+
+
+8
+select m.t1,m.t2,m.sid
+from match1 m,stadium ss
+where m.sid=ss.sid
+and sname='SHEIKH ZAYED STADIUM';
+
+
+
+
